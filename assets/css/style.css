@@ -53,6 +53,7 @@ body {
   justify-content: space-around;
   align-items: center;
   height:100%;
+  position: relative;
 }
 .card{
     height:25%;
@@ -61,25 +62,31 @@ body {
     position: relative;
     /* perspective: 1000px; */
 }
-.lfzcard{
+.card_back{
   background-image: url("../images/lfz-card.jpg");
   /* transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
 }
- .lfzcard ,.logo ,.react_logo,.php_logo,.node_logo,.mysql_logo{
+
+.card_back, .card_front {
+  position: absolute;
+}
+ .card_back ,.card_front,.react_logo,.php_logo,.node_logo,.mysql_logo,.js_logo,.html_logo,
+ .github_logo,.docker_logo,.css_logo
+  {
+  background-position: center;
   background-size: cover;
   height:100%;
   width:100%;
-  position:absolute;
   /* backface-visibility: hidden; */
 }
-/* .card:hover .logo{
+/* .card:hover .card_front{
 transform: rotateY(180deg);
 } */
 
 .react_logo {
-  background-image: url(../images/react-logo.png);
+  background-image: url("../images/react-logo.png");
 }
 .php_logo{
   background-image: url("../images/php-logo.jpeg");
@@ -104,4 +111,7 @@ transform: rotateY(180deg);
 }
 .css_logo{
   background-image: url("../images/css-logo.png");
+}
+.hidden{
+  display:none;
 }
