@@ -67,7 +67,7 @@ body {
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
 }
- .lfzcard ,.logo ,.react{
+ .lfzcard ,.logo ,.react_logo,.php_logo,.node_logo,.mysql_logo{
   background-size: cover;
   height:100%;
   width:100%;
@@ -85,5 +85,23 @@ transform: rotateY(180deg);
   background-image: url("../images/php-logo.jpeg");
 }
 .node_logo{
-  background-color: url("../images/node-logo.png");
+  background-image: url("../images/node-logo.png");
+}
+.mysql_logo{
+  background-image: url("../images/mysql-logo.jpg");
+}
+.js_logo{
+  background-image: url("../images/js-logo.png");
+}
+.html_logo{
+  background-image: url("../images/html-logo.png");
+}
+.github_logo{
+  background-image: url("../images/gitHub-logo.png");
+}
+.docker_logo{
+  background-image: url("../images/docker-logo.jpg");
+}
+.css_logo{
+  background-image: url("../images/css-logo.png");
 }
