@@ -115,3 +115,21 @@ transform: rotateY(180deg);
 .hidden{
   display:none;
 }
+.modal{
+  /* visibility: hidden; */
+  height:300px;
+  width:400px;
+  background-color:mediumvioletred;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform :translate(-50%,-50%);
+  border-radius: 12px;
+}
+.modal_close{
+  /* visibility: hidden; */
+  height:50px;
+  width:100px;
+  background-color: midnightblue;
+  color : white;
+}
