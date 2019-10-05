@@ -2,10 +2,15 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 2;
+var max_matches = 9;
+var attempts =0;
+var games_played = 0;
 
 function initializeApp(){
 $('.card').on("click",'.card_back',handleCardClick);
+  $('.modal_close').on("click", function () {
+    $('.modal').addClass("hidden");
+  });
 }
 function handleCardClick(event){
   console.log(event);
@@ -23,14 +28,18 @@ function handleCardClick(event){
 
     if (firstCardImage === secondCardImage) {
       console.log("cards match!!");
+      attempts = attempts + 1;
       matches = matches + 1;
       firstCardClicked = null;
       secondCardClicked = null;
+      displayStats();
     }
     else {
       //use setTimeout to call a function
         //in that function, remove the class hidden
         //set both first and second cardClicked to null
+        attempts = attempts + 1;
+        displayStats();
         setTimeout(function(){
           firstCardClicked.removeClass("hidden");
           secondCardClicked.removeClass("hidden");
@@ -41,10 +50,35 @@ function handleCardClick(event){
     if (matches === max_matches) {
       $('.modal').removeClass("hidden");
       $('.modal_close').removeClass("hidden");
-      $('.modal_close').on("click",function(){
-        $('.modal').addClass("hidden");
-      });
+
     }
   }
+
+}
+function calculateAccuracy(){
+  var resultObj = {};
+  if (attempts === 10 && matches === max_matches){
+    $('.modal').removeClass('hidden');
+    $('.modal_text').text("Congratulations!! You have won.");
+    games_played = games_played + 1;
+  }
+  else if(attempts === 10){
+    $('.modal').removeClass('hidden');
+    $('.modal_text').text("Sorry! Want to try again ?").removeClass("hidden");
+    games_played = games_played + 1;
+  }
+  resultObj.games_played = games_played;
+  resultObj.attempts = attempts;
+  resultObj.accuracy = Math.floor((matches / attempts) * 100);
+  console.log(resultObj);
+  return resultObj;
+
+}
+
+function displayStats(){
+var result_to_display = calculateAccuracy();
+  $('.games_played_value').text(result_to_display.games_played);
+  $('.attempts_val').text(result_to_display.attempts);
+  $('.accuracy_value').text(result_to_display.accuracy+"%");
 
 }
