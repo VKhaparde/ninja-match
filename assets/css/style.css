@@ -1,12 +1,11 @@
 body {
-  background-color: blanchedalmond;
+  background-size: cover;
   box-sizing: border-box;
-  background-image: url("../images/lfz-background.jpg");
+  background-image: url("../images/my_images/ninjago-wallpapers2.jpg");
 }
 
 .header{
   height:15vh;
-  border: 2px solid black;
   margin:4px;
   text-align: center;
   padding:4px;
@@ -14,15 +13,12 @@ body {
 }
 .outer_container{
   height:80vh;
-  border: 2px solid black;
   display:flex;
-  /* flex-wrap: initial; */
   margin: 4px;
 }
 .aside{
   height:100%;
   width:32%;
-  border: 2px solid black;
   text-align: center;
 }
 .stats_content{
@@ -45,7 +41,6 @@ body {
 .main{
   height:100%;
   width:63%;
-  border: 2px solid black;
 }
 .container{
   display:flex;
@@ -60,10 +55,9 @@ body {
     width:15%;
     background-color:transparent;
     position: relative;
-    /* perspective: 1000px; */
 }
 .card_back{
-  background-image: url("../images/lfz-card.jpg");
+  background-image: url("../images/my_images/lego_ninjago.jpeg");
   /* transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
@@ -72,45 +66,46 @@ body {
 .card_back, .card_front {
   position: absolute;
 }
- .card_back ,.card_front,.react_logo,.php_logo,.node_logo,.mysql_logo,.js_logo,.html_logo,
- .github_logo,.docker_logo,.css_logo
+ .card_back ,.card_front,.red_ninja,.golden_ninja,.blue_ninja,.green_ninja,.white_ninja,.black_ninja,
+ .nya,.sensei_wu,.lord_garmadon
   {
   background-position: center;
   background-size: cover;
   height:100%;
   width:100%;
+  border-radius: 10px;
   /* backface-visibility: hidden; */
 }
 /* .card:hover .card_front{
 transform: rotateY(180deg);
 } */
 
-.react_logo {
-  background-image: url("../images/react-logo.png");
+.red_ninja {
+  background-image: url("../images/my_images/red_ninja.jpeg");
 }
-.php_logo{
-  background-image: url("../images/php-logo.jpeg");
+.golden_ninja{
+  background-image: url("../images/my_images/golden_ninja.jpeg");
 }
-.node_logo{
-  background-image: url("../images/node-logo.png");
+.blue_ninja{
+  background-image: url("../images/my_images/blue_ninja.jpeg");
 }
-.mysql_logo{
-  background-image: url("../images/mysql-logo.jpg");
+.green_ninja{
+  background-image: url("../images/my_images/green-ninja.jpeg");
 }
-.js_logo{
-  background-image: url("../images/js-logo.png");
+.white_ninja{
+  background-image: url("../images/my_images/white_ninja.jpeg");
 }
-.html_logo{
-  background-image: url("../images/html-logo.png");
+.black_ninja{
+  background-image: url("../images/my_images/black_ninja.jpeg");
 }
-.github_logo{
-  background-image: url("../images/gitHub-logo.png");
+.nya{
+  background-image: url("../images/my_images/nya.jpeg");
 }
-.docker_logo{
-  background-image: url("../images/docker-logo.jpg");
+.sensei_wu{
+  background-image: url("../images/my_images/Sensei_Wu.jpeg");
 }
-.css_logo{
-  background-image: url("../images/css-logo.png");
+.lord_garmadon{
+  background-image: url("../images/my_images/LordGarmadon.jpeg");
 }
 .hidden{
   display:none;
@@ -125,6 +120,7 @@ transform: rotateY(180deg);
   transform :translate(-50%,-50%);
   border-radius: 12px;
   text-align: center;
+  font-size: 40px;
   border:4px solid blanchedalmond;
 }
 .modal_close{

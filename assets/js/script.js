@@ -10,11 +10,12 @@ function initializeApp(){
 $('.card').on("click",'.card_back',handleCardClick);
   $('.modal_close').on("click", function () {
     $('.modal').addClass("hidden");
+    displayResetStats();
   });
 }
 function handleCardClick(event){
-  console.log(event);
-  console.log(event.currentTarget);
+  // console.log(event);
+  // console.log(event.currentTarget);
   $(event.currentTarget).addClass('hidden');
 
   if(firstCardClicked === null){
@@ -47,24 +48,24 @@ function handleCardClick(event){
           secondCardClicked = null;
         },1500);
     }
-    if (matches === max_matches) {
-      $('.modal').removeClass("hidden");
-      $('.modal_close').removeClass("hidden");
+    // if (matches === max_matches) {
+    //   $('.modal').removeClass("hidden");
+    //   $('.modal_close').removeClass("hidden");
 
-    }
+    // }
   }
-
 }
 function calculateAccuracy(){
   var resultObj = {};
-  if (attempts === 10 && matches === max_matches){
+  if (attempts <= 10 && matches === max_matches){
     $('.modal').removeClass('hidden');
-    $('.modal_text').text("Congratulations!! You have won.");
+    $('.modal_text').text("Congratulations!! You Win.");
     games_played = games_played + 1;
+
   }
   else if(attempts === 10){
     $('.modal').removeClass('hidden');
-    $('.modal_text').text("Sorry! Want to try again ?").removeClass("hidden");
+    $('.modal_text').text("Sorry!! Try again?").removeClass("hidden");
     games_played = games_played + 1;
   }
   resultObj.games_played = games_played;
@@ -72,7 +73,6 @@ function calculateAccuracy(){
   resultObj.accuracy = Math.floor((matches / attempts) * 100);
   console.log(resultObj);
   return resultObj;
-
 }
 
 function displayStats(){
@@ -80,5 +80,22 @@ var result_to_display = calculateAccuracy();
   $('.games_played_value').text(result_to_display.games_played);
   $('.attempts_val').text(result_to_display.attempts);
   $('.accuracy_value').text(result_to_display.accuracy+"%");
-
+}
+function resetStats(){
+  var resetResultObj ={};
+  matches = 0;
+  attempts = 0;
+  var accuracy = 0;
+  resetResultObj.matches = matches;
+  resetResultObj.attempts = attempts;
+  resetResultObj.games_played = games_played;
+  resetResultObj.accuracy = accuracy;
+  return resetResultObj;
+}
+function displayResetStats(){
+  var display_reset_stats = resetStats();
+  $('.games_played_value').text(display_reset_stats.games_played);
+  $('.attempts_val').text(display_reset_stats.attempts);
+  $('.accuracy_value').text(display_reset_stats.accuracy+"%");
+  $('.card_back').removeClass("hidden");
 }
