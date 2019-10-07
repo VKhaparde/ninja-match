@@ -76,9 +76,6 @@ body {
   border-radius: 10px;
   /* backface-visibility: hidden; */
 }
-/* .card:hover .card_front{
-transform: rotateY(180deg);
-} */
 
 .red_ninja {
   background-image: url("../images/my_images/red_ninja.jpeg");
@@ -111,9 +108,9 @@ transform: rotateY(180deg);
   display:none;
 }
 .modal{
-  height:300px;
-  width:400px;
-  background-color:grey;
+  height:50%;
+  width:50%;
+  background-color:brown;
   position:fixed;
   top:50%;
   left:50%;
@@ -122,6 +119,7 @@ transform: rotateY(180deg);
   text-align: center;
   font-size: 40px;
   border:4px solid blanchedalmond;
+  overflow: auto;
 }
 .modal_close{
   height:50px;
