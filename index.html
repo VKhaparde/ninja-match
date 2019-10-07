@@ -10,12 +10,15 @@
   <script src="./assets/js/script.js"></script>
 </head>
 <body>
+  <!-- <embed src="../memory_match/assets/images/my_images/Ninjago_Overture.mp3" autostart = "true"> -->
+  <audio src="../memory_match/assets/images/my_images/Ninjago_Overture.mp3"
+  loop = "true" autoplay = "true" hidden = "true" preload="auto"></audio>
   <div class="header">
   <h1>Ninjago Memory Match</h1>
   </div>
   <div class="outer_container">
   <div class="aside">
-    <p><strong></strong></p>
+     <p><strong>STATS</strong></p>
   <div class = stats_content>
     <div class="stat games_played">
       <p>Games played</p>
@@ -44,31 +47,19 @@
         <div class="card_back"></div>
       </div>
       <div class="card">
+        <div class="card_front golden_ninja"></div>
+        <div class="card_back"></div>
+      </div>
+      <div class="card">
+        <div class="card_front green_ninja"></div>
+        <div class="card_back"></div>
+      </div>
+      <div class="card">
         <div class="card_front red_ninja"></div>
         <div class="card_back"></div>
       </div>
       <div class="card">
-        <div class="card_front golden_ninja"></div>
-        <div class="card_back"></div>
-      </div>
-      <div class="card">
-        <div class="card_front golden_ninja"></div>
-        <div class="card_back"></div>
-      </div>
-      <div class="card">
         <div class="card_front blue_ninja"></div>
-        <div class="card_back"></div>
-      </div>
-      <div class="card">
-        <div class="card_front blue_ninja"></div>
-        <div class="card_back"></div>
-      </div>
-      <div class="card">
-        <div class="card_front green_ninja"></div>
-        <div class="card_back"></div>
-      </div>
-      <div class="card">
-        <div class="card_front green_ninja"></div>
         <div class="card_back"></div>
       </div>
       <div class="card">
@@ -76,11 +67,19 @@
         <div class="card_back"></div>
       </div>
       <div class="card">
+        <div class="card_front green_ninja"></div>
+        <div class="card_back"></div>
+      </div>
+      <div class="card">
+        <div class="card_front golden_ninja"></div>
+        <div class="card_back"></div>
+      </div>
+      <div class="card">
         <div class="card_front white_ninja"></div>
         <div class="card_back"></div>
       </div>
       <div class="card">
-        <div class="card_front black_ninja"></div>
+        <div class="card_front blue_ninja"></div>
         <div class="card_back"></div>
       </div>
       <div class="card">
@@ -96,7 +95,11 @@
         <div class="card_back"></div>
       </div>
       <div class="card">
-        <div class="card_front sensei_wu"></div>
+        <div class="card_front black_ninja"></div>
+        <div class="card_back"></div>
+      </div>
+      <div class="card">
+        <div class="card_front lord_garmadon"></div>
         <div class="card_back"></div>
       </div>
       <div class="card">
@@ -108,7 +111,7 @@
         <div class="card_back"></div>
       </div>
       <div class="card">
-        <div class="card_front lord_garmadon"></div>
+        <div class="card_front sensei_wu"></div>
         <div class="card_back"></div>
       </div>
 
@@ -119,6 +122,9 @@
     <!-- <div class="modal_close hidden"></div> -->
     <button class = "modal_close">Would you like to Play again.</button>
   </div>
+  <div id = "play_sound">
+    <button class="start_sound"></button>
   </div>
+</div>
 </body>
 </html>

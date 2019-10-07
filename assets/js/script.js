@@ -7,15 +7,20 @@ var attempts =0;
 var games_played = 0;
 
 function initializeApp(){
-$('.card').on("click",'.card_back',handleCardClick);
-  $('.modal_close').on("click", function () {
+  // music = new sound("../Ninjago_Overture.mp3");
+  // music.play();
+  $('.card').on("click",".card_back",handleCardClick);
+  $('.modal_close').on("click", function() {
     $('.modal').addClass("hidden");
+    $('.card').on("click",".card_back",handleCardClick);
     displayResetStats();
   });
+  addEventListenersToDomElements();
 }
 function handleCardClick(event){
   // console.log(event);
   // console.log(event.currentTarget);
+  // $('audio').attr("autostart","true");
   $(event.currentTarget).addClass('hidden');
 
   if(firstCardClicked === null){
@@ -46,26 +51,23 @@ function handleCardClick(event){
           secondCardClicked.removeClass("hidden");
           firstCardClicked = null;
           secondCardClicked = null;
-        },1500);
+        },1000);
     }
-    // if (matches === max_matches) {
-    //   $('.modal').removeClass("hidden");
-    //   $('.modal_close').removeClass("hidden");
-
-    // }
   }
 }
 function calculateAccuracy(){
   var resultObj = {};
-  if (attempts <= 10 && matches === max_matches){
+  if (attempts <= 12 && matches === max_matches){
     $('.modal').removeClass('hidden');
     $('.modal_text').text("Congratulations!! You Win.");
+    $('.card').off("click");
     games_played = games_played + 1;
 
   }
-  else if(attempts === 10){
+  else if(attempts === 12){
     $('.modal').removeClass('hidden');
-    $('.modal_text').text("Sorry!! Try again?").removeClass("hidden");
+    $('.modal_text').text("Sorry!! Try again.").removeClass("hidden");
+    $('.card').off("click");
     games_played = games_played + 1;
   }
   resultObj.games_played = games_played;
@@ -99,3 +101,47 @@ function displayResetStats(){
   $('.accuracy_value').text(display_reset_stats.accuracy+"%");
   $('.card_back').removeClass("hidden");
 }
+// function sound(src) {
+//   this.sound = document.createElement("audio");
+//   this.sound.src = src;
+//   this.sound.setAttribute("preload", "auto");
+//   this.sound.setAttribute("controls", "none");
+//   this.sound.style.display = "none";
+//   document.body.appendChild(this.sound);
+//   this.play = function () {
+//     this.sound.play();
+//   }
+//   this.stop = function () {
+//     this.sound.pause();
+//   }
+// }
+function addEventListenersToDomElements() {
+  $(".start_sound").on('click', hideModalAndShowSounds);
+}
+function hideModalAndShowSounds() {
+  hideModal();
+  initiateSoundPlayer();
+}
+function hideModal() {
+  $("#play_sound").addClass('hidden');
+}
+function initiateSoundPlayer() {
+  $("#playAgain").addClass('hidden');
+  $("#display").text('loading audio');
+  var player = new Audio();
+  // player.src = 'https://danielpaschal.com/wilhelm.mp3';
+  player.src = 'memory_match/assets/images/my_images/Ninjago_Overture.mp3';
+   player.addEventListener('canplaythrough', playSound);
+
+  player.load();
+}
+function playSound() {
+  this.play();
+}
+$(function () {
+  var parent = $(".container");
+  var divs = parent.children();
+  while (divs.length) {
+    parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+  }
+});
