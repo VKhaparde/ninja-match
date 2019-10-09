@@ -7,8 +7,12 @@ var attempts =0;
 var games_played = 0;
 
 function initializeApp(){
-  // music = new sound("../Ninjago_Overture.mp3");
+  // var music = new Audio("../Ninjago_Overture.mp3");
   // music.play();
+  $("body").on("click",function(){
+    // $('#bg_music')[0].play();
+    newAudioElement.play();
+  });
   $('.card').on("click",".card_back",handleCardClick);
   $('.modal_close').on("click", function() {
     $('.modal').addClass("hidden");
@@ -18,9 +22,6 @@ function initializeApp(){
   addEventListenersToDomElements();
 }
 function handleCardClick(event){
-  // console.log(event);
-  // console.log(event.currentTarget);
-  // $('audio').attr("autostart","true");
   $(event.currentTarget).addClass('hidden');
 
   if(firstCardClicked === null){
@@ -101,7 +102,9 @@ function displayResetStats(){
   $('.accuracy_value').text(display_reset_stats.accuracy+"%");
   $('.card_back').removeClass("hidden");
 }
-// function sound(src) {
+// function sound() {
+// $('#bg_music').play();
+
 //   this.sound = document.createElement("audio");
 //   this.sound.src = src;
 //   this.sound.setAttribute("preload", "auto");
@@ -114,7 +117,11 @@ function displayResetStats(){
 //   this.stop = function () {
 //     this.sound.pause();
 //   }
-// }
+//}
+
+var newAudioElement = new Audio();
+newAudioElement.src = '../memory_match/assets/images/my_images/Ninjago_Overture.mp3';
+
 function addEventListenersToDomElements() {
   $(".start_sound").on('click', hideModalAndShowSounds);
 }
