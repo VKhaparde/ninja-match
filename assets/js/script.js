@@ -46,12 +46,14 @@ function handleCardClick(event){
         //in that function, remove the class hidden
         //set both first and second cardClicked to null
         attempts = attempts + 1;
+        $('body').addClass('no_events');
         displayStats();
         setTimeout(function(){
           firstCardClicked.removeClass("hidden");
           secondCardClicked.removeClass("hidden");
           firstCardClicked = null;
           secondCardClicked = null;
+          $('body').removeClass('no_events');
         },1000);
     }
   }
@@ -80,9 +82,9 @@ function calculateAccuracy(){
 
 function displayStats(){
 var result_to_display = calculateAccuracy();
-  $('.games_played_value').text(result_to_display.games_played);
-  $('.attempts_val').text(result_to_display.attempts);
-  $('.accuracy_value').text(result_to_display.accuracy+"%");
+  $('.games_played_value > p').text(result_to_display.games_played);
+  $('.attempts_val > p').text(result_to_display.attempts);
+  $('.accuracy_value > p').text(result_to_display.accuracy+"%");
 }
 function resetStats(){
   var resetResultObj ={};

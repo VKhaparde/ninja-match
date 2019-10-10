@@ -131,3 +131,6 @@ body {
   right:20%;
   border : 2px solid blanchedalmond;
 }
+.no_events{
+  pointer-events: none;
+}
