@@ -2,14 +2,15 @@ body {
   background-size: cover;
   box-sizing: border-box;
   background-image: url("../images/my_images/ninjago-wallpapers2.jpg");
+  font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 .header{
   height:15vh;
   margin:4px;
   text-align: center;
-  padding:4px;
-
+  padding:2px;
+  font-size:1.5rem;
 }
 .outer_container{
   height:80vh;
@@ -27,16 +28,20 @@ body {
   align-items:center;
   flex-direction: column;
   text-align: center;
+  font-size: 1.25rem;
 }
 .stat{
   height:20%;
-  width:80%;
-  border: 1px solid black;
-  background-color:lightskyblue;
+  width:70%;
+  border: 3px solid blanchedalmond;
   padding: 4px;
-  margin:6px;
+  margin:2px;
   border-radius: 12px;
-
+  background-color:maroon;
+  box-sizing: border-box;
+}
+.stat > p {
+padding-bottom: 2px;
 }
 .main{
   height:100%;
@@ -105,31 +110,40 @@ body {
   background-image: url("../images/my_images/LordGarmadon.jpeg");
 }
 .hidden{
-  display:none;
+  visibility: hidden;
 }
 .modal{
   height:50%;
   width:50%;
-  background-color:brown;
+  background-color:rgb(24, 66, 24);
   position:fixed;
   top:50%;
   left:50%;
   transform :translate(-50%,-50%);
   border-radius: 12px;
   text-align: center;
-  font-size: 40px;
+  font-size: 2rem;
   border:4px solid blanchedalmond;
   overflow: auto;
+  display:flex;
+  flex-direction: column;
+  color: blanchedalmond;
+  justify-content: center;
+  align-items: center;
+}
+.modal_text{
+  margin: 20px;
 }
 .modal_close{
   height:50px;
-  width:100px;
+  width:200px;
   border-radius: 12px;
-  background-color: midnightblue;
-  color : white;
-  top:10%;
-  right:20%;
+  background-color: rgb(3, 3, 37);
+  color : blanchedalmond;
   border : 2px solid blanchedalmond;
+  font-size: 20px;
+  font-family: 'Ubuntu Condensed', sans-serif;
+
 }
 .no_events{
   pointer-events: none;
