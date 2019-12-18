@@ -17,9 +17,9 @@ https://github.com/VKhaparde/ninja-match/blob/master/assets/images/ninja-match.p
 ### Getting Started
 1. Clone the repository.
 
-  git clone https://github.com/VKhaparde/ninja-match.git
+   git clone https://github.com/VKhaparde/ninja-match.git
   
-  cd ninja-match
+   cd ninja-match
   
 2. View the application by opening https://ninja-match.vandanakhaparde.com/ in your browser.
   
