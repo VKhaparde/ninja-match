@@ -12,6 +12,11 @@ https://ninja-match.vandanakhaparde.com/
 * User earns points if the clicked cards match
 * User wins/loses the game if all the pairs match within the total number of attempts set
 ## Preview
+https://github.com/VKhaparde/ninja-match/blob/master/assets/images/ninja-match.png
+## Development
+### Getting Started
+1. Clone the repository.
 
+ git clone 
 
 
