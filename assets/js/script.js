@@ -5,13 +5,20 @@ var matches = null;
 var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
+var audioElement = new Audio();
+audioElement.src = "assets/images/my_images/Ninjago_Overture.mp3";
 
 function initializeApp() {
   $('.start-game').on('click', function () {
     $('.welcome-modal').addClass('hidden');
   });
-  $("body").on("click", function () {
-    newAudioElement.play();
+  $('.enableMute').on('click',function(){
+    audioElement.muted = true;
+    audioElement.pause();
+  });
+  $('.disableMute').on('click', function(){
+    audioElement.muted = false;
+    audioElement.play();
   });
   $('.card').on("click", ".card_back", handleCardClick);
   $('.modal_close').on("click", function () {
@@ -19,7 +26,6 @@ function initializeApp() {
     $('.card').on("click", ".card_back", handleCardClick);
     displayResetStats();
   });
-  addEventListenersToDomElements();
 }
 function handleCardClick(event) {
   $(event.currentTarget).addClass('hidden');
@@ -101,31 +107,7 @@ function displayResetStats() {
   $('.card_back').removeClass("hidden");
 }
 
-var newAudioElement = new Audio();
-// newAudioElement.src = '../ninja-match/assets/images/my_images/Ninjago_Overture.mp3';
-newAudioElement.src = "assets/images/my_images/Ninjago_Overture.mp3"
-function addEventListenersToDomElements() {
-  $(".start_sound").on('click', hideModalAndShowSounds);
-}
-function hideModalAndShowSounds() {
-  hideModal();
-  initiateSoundPlayer();
-}
-function hideModal() {
-  $("#play_sound").addClass('hidden');
-}
-function initiateSoundPlayer() {
-  $("#playAgain").addClass('hidden');
-  $("#display").text('loading audio');
-  var player = new Audio();
-  player.src = 'ninja-match/assets/images/my_images/Ninjago_Overture.mp3';
-  player.addEventListener('canplaythrough', playSound);
 
-  player.load();
-}
-function playSound() {
-  this.play();
-}
 $(function () {
   var parent = $(".container");
   var divs = parent.children();
