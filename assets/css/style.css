@@ -9,9 +9,19 @@ body {
 .header{
   height:15vh;
   margin:4px;
-  text-align: center;
   padding:2px;
   font-size:1.5rem;
+  display :flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.music{
+  display: flex;
+  justify-content:flex-end;
+  align-items: flex-end;
+}
+button{
+  border-radius: 8px;
 }
 .outer_container{
   height:85vh;
@@ -179,6 +189,7 @@ padding-bottom: 2px;
   font-size: 20px;
   font-family: 'Ubuntu Condensed', sans-serif;
 }
+
 @media only screen and (max-width: 812px){
   .header{
     height:5vh;
