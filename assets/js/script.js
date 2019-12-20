@@ -7,7 +7,9 @@ var attempts = 0;
 var games_played = 0;
 
 function initializeApp() {
-
+  $('.start-game').on('click', function () {
+    $('.welcome-modal').addClass('hidden');
+  });
   $("body").on("click", function () {
     newAudioElement.play();
   });
@@ -100,8 +102,8 @@ function displayResetStats() {
 }
 
 var newAudioElement = new Audio();
-newAudioElement.src = '../ninja-match/assets/images/my_images/Ninjago_Overture.mp3';
-
+// newAudioElement.src = '../ninja-match/assets/images/my_images/Ninjago_Overture.mp3';
+newAudioElement.src = "assets/images/my_images/Ninjago_Overture.mp3"
 function addEventListenersToDomElements() {
   $(".start_sound").on('click', hideModalAndShowSounds);
 }
