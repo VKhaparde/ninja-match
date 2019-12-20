@@ -1,5 +1,6 @@
 body {
   background-size: cover;
+  background-repeat: no-repeat;
   box-sizing: border-box;
   background-image: url("../images/my_images/ninjago-wallpapers2.jpg");
   font-family: 'Ubuntu Condensed', sans-serif;
@@ -63,9 +64,6 @@ padding-bottom: 2px;
 }
 .card_back{
   background-image: url("../images/my_images/lego_ninjago.jpeg");
-  /* transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
 }
 
 .card_back, .card_front {
@@ -143,8 +141,134 @@ padding-bottom: 2px;
   border : 2px solid blanchedalmond;
   font-size: 20px;
   font-family: 'Ubuntu Condensed', sans-serif;
-
 }
 .no_events{
   pointer-events: none;
+}
+
+.welcome-modal{
+  height:50%;
+  width:50%;
+  background-color:rgb(24, 66, 24);
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform :translate(-50%,-50%);
+  border-radius: 12px;
+  text-align: center;
+  border:4px solid blanchedalmond;
+  overflow: auto;
+  display:flex;
+  flex-direction: column;
+  color: blanchedalmond;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+}
+.modal-title{
+  font-size: 2rem;
+}
+.start-game{
+  height:50px;
+  width:200px;
+  border-radius: 12px;
+  background-color: rgb(3, 3, 37);
+  color : blanchedalmond;
+  border : 2px solid blanchedalmond;
+  font-size: 20px;
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+@media only screen and (max-width: 812px){
+  .header{
+    height:5vh;
+    font-size:3vmin;
+    margin:0;
+    padding:2px;
+  }
+  .outer_container{
+    height:95vh;
+  }
+  .stat{
+  height:15%;
+  width:80%;
+}
+  .stats_content{
+  font-size: 1rem;
+}
+.stat > p {
+font-size:5vmin;
+margin-top:5%;
+}
+.welcome-modal{
+  height: 80vh;
+  width:80vw;
+  font-size: 1rem;
+}
+/* @media only screen and (max-width: 768px) {
+  .header{
+    height:5vh;
+    font-size:1vmin;
+    margin:0;
+    padding:0px;
+  }
+  .outer_container{
+    height:95vh;
+  }
+  .stat{
+  height:15%;
+  width:80%;
+}
+  .stats_content{
+  font-size: 1rem;
+}
+.stat > p {
+font-size:5vmin;
+margin-top:5%;
+}
+.welcome-modal{
+  height: 80vh;
+  width:80vw;
+  font-size: 1rem;
+}
+
+} */
+@media only screen and (max-width: 375px) {
+  /* For mobile phones: */
+  .card{
+    height:15%;
+    width:32%;
+    background-color:transparent;
+    position: relative;
+}
+.stat{
+  height:15%;
+  width:80%;
+  border: 3px solid blanchedalmond;
+  padding: 4px;
+  margin:6px;
+  border-radius: 12px;
+  background-color:maroon;
+  box-sizing: border-box;
+}
+.stats_content{
+  font-size: 1.15rem;
+}
+.stat > p {
+font-size:5vmin;
+margin-top:5%;
+}
+.welcome-modal{
+  height: 80vh;
+  width:80vw;
+  font-size: 1rem;
+}
+.modal-title{
+  font-size: 1.5rem;
+}
+.modal-body{
+  padding-right:15px;
+}
+.modal{
+  width:80%;
+}
 }
