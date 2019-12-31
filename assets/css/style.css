@@ -4,10 +4,11 @@ body {
   box-sizing: border-box;
   background-image: url("../images/my_images/ninjago-wallpapers2.jpg");
   font-family: 'Ubuntu Condensed', sans-serif;
+  user-select: none;
+  overflow: hidden;
 }
-
 .header{
-  height:15vh;
+  height:10vh;
   margin:4px;
   padding:2px;
   font-size:1.5rem;
@@ -24,7 +25,7 @@ button{
   border-radius: 8px;
 }
 .outer_container{
-  height:85vh;
+  height:90vh;
   display:flex;
   margin: 4px;
 }
@@ -154,7 +155,7 @@ padding-bottom: 2px;
   font-family: 'Ubuntu Condensed', sans-serif;
 }
 .no_events{
-  pointer-events: none;
+  pointer-events:none;
 }
 
 .welcome-modal{
@@ -237,10 +238,12 @@ margin-top:5%;
   margin:3%;
 }
   .card{
-    height:15%;
+    height:13%;
     width:32%;
     background-color:transparent;
     position: relative;
+    margin-bottom:5%;
+    box-sizing: border-box;
 }
 .stat{
   height:15%;

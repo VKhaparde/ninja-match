@@ -9,8 +9,10 @@ var audioElement = new Audio();
 audioElement.src = "assets/images/my_images/Ninjago_Overture.mp3";
 
 function initializeApp() {
+  $('.card').addClass('no_events');
   $('.start-game').on('click', function () {
     $('.welcome-modal').addClass('hidden');
+    $('.card').removeClass('no_events');
   });
   $('.enableMute').on('click',function(){
     audioElement.muted = true;
@@ -29,7 +31,6 @@ function initializeApp() {
 }
 function handleCardClick(event) {
   $(event.currentTarget).addClass('hidden');
-
   if (firstCardClicked === null) {
     firstCardClicked = $(event.currentTarget);
   }
