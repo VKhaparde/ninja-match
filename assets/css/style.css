@@ -73,6 +73,12 @@ padding-bottom: 2px;
     background-color:transparent;
     position: relative;
 }
+.card:hover{
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 .card_back{
   background-image: url("../images/my_images/lego_ninjago.jpeg");
 }
@@ -215,6 +221,12 @@ padding-bottom: 2px;
 font-size:5vmin;
 margin-top:5%;
 }
+.card:hover{
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 .welcome-modal{
   height: 80vh;
   width:80vw;
@@ -237,13 +249,19 @@ margin-top:5%;
   text-align: center;
   margin:3%;
 }
-  .card{
+.card{
     height:13%;
-    width:32%;
+    width:30%;
     background-color:transparent;
     position: relative;
     margin-bottom:5%;
     box-sizing: border-box;
+}
+.card:hover{
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 .stat{
   height:15%;
