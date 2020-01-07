@@ -21,8 +21,14 @@ body {
   justify-content:flex-end;
   align-items: flex-end;
 }
+
 button{
   border-radius: 8px;
+  cursor: pointer;
+}
+button:hover{
+  background:rgb(3, 3, 37);
+  color: beige;
 }
 .outer_container{
   height:90vh;
