@@ -3,7 +3,8 @@ var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
 var max_matches = 9;
-var attempts = 0;
+var attempts = 16;
+var attempt_count=0;
 var games_played = 0;
 var audioElement = new Audio();
 audioElement.src = "assets/images/my_images/Ninjago_Overture.mp3";
@@ -40,8 +41,9 @@ function handleCardClick(event) {
     var secondCardImage = secondCardClicked.siblings().css("background-image");
 
     if (firstCardImage === secondCardImage) {
-      attempts = attempts + 1;
+      attempts = attempts - 1;
       matches = matches + 1;
+      attempt_count = attempt_count + 1;
       firstCardClicked = null;
       secondCardClicked = null;
       displayStats();
@@ -50,7 +52,8 @@ function handleCardClick(event) {
       //use setTimeout to call a function
       //in that function, remove the class hidden
       //set both first and second cardClicked to null
-      attempts = attempts + 1;
+      attempts = attempts - 1;
+      attempt_count = attempt_count + 1;
       $('body').addClass('no_events');
       displayStats();
       setTimeout(function () {
@@ -65,13 +68,13 @@ function handleCardClick(event) {
 }
 function calculateAccuracy() {
   var resultObj = {};
-  if (attempts <= 15 && matches === max_matches) {
+  if (attempts >=0  && matches === max_matches) {
     $('.modal').removeClass('hidden');
     $('.modal_text').text("Congratulations!! You Win.");
     $('.card').off("click");
     games_played = games_played + 1;
   }
-  else if (attempts === 15) {
+  else if (attempts === 0) {
     $('.modal').removeClass('hidden');
     $('.modal_text').text("Sorry!! Try again.").removeClass("hidden");
     $('.card').off("click");
@@ -79,7 +82,7 @@ function calculateAccuracy() {
   }
   resultObj.games_played = games_played;
   resultObj.attempts = attempts;
-  resultObj.accuracy = Math.floor((matches / attempts) * 100);
+  resultObj.accuracy = Math.floor((matches / attempt_count) * 100);
   return resultObj;
 }
 
@@ -92,7 +95,7 @@ function displayStats() {
 function resetStats() {
   var resetResultObj = {};
   matches = 0;
-  attempts = 0;
+  attempts = 16;
   var accuracy = 0;
   resetResultObj.matches = matches;
   resetResultObj.attempts = attempts;
