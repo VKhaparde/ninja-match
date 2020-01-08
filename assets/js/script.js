@@ -69,16 +69,16 @@ function handleCardClick(event) {
 function calculateAccuracy() {
   var resultObj = {};
   if (attempts >=0  && matches === max_matches) {
-    $('.modal').removeClass('hidden');
-    $('.modal_text').text("Congratulations!! You Win.");
-    $('.card').off("click");
-    games_played = games_played + 1;
+      $('.modal').removeClass('hidden');
+      $('.modal_text').text("Congratulations!! You Win.");
+      $('.card').off("click");
+      games_played = games_played + 1;
   }
   else if (attempts === 0) {
-    $('.modal').removeClass('hidden');
-    $('.modal_text').text("Sorry!! Try again.").removeClass("hidden");
-    $('.card').off("click");
-    games_played = games_played + 1;
+      $('.modal').removeClass('hidden');
+      $('.modal_text').text("Sorry!! Your attempts are over.").removeClass("hidden");
+      $('.card').off("click");
+      games_played = games_played + 1;
   }
   resultObj.games_played = games_played;
   resultObj.attempts = attempts;
