@@ -12,7 +12,7 @@ https://ninja-match.vandanakhaparde.com/
 * User earns points if the clicked cards match
 * User wins/loses the game if all the pairs match within the total number of attempts set
 ## Preview
-![ninjaM](https://user-images.githubusercontent.com/54192822/72102742-a1379a80-331f-11ea-86cb-fb05bfd2815a.gif)
+![ninja-match](https://user-images.githubusercontent.com/54192822/72040253-dac8c100-329f-11ea-94a9-e1979ba3105e.gif)
 ## Development
 ### Getting Started
 1. Clone the repository.
