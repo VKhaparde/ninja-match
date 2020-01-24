@@ -28,6 +28,7 @@ function initializeApp() {
     $('.modal').addClass("hidden");
     $('.card').on("click", ".card_back", handleCardClick);
     displayResetStats();
+   $('.card').removeClass('no_events');
   });
 }
 function handleCardClick(event) {
@@ -71,12 +72,14 @@ function calculateAccuracy() {
   if (attempts >=0  && matches === max_matches) {
       $('.modal').removeClass('hidden');
       $('.modal_text').text("Congratulations!! You Win.");
+      $('.card').addClass('no_events');
       $('.card').off("click");
       games_played = games_played + 1;
   }
   else if (attempts === 0) {
       $('.modal').removeClass('hidden');
       $('.modal_text').text("Sorry!! Your attempts are over.").removeClass("hidden");
+      $('.card').addClass('no_events');
       $('.card').off("click");
       games_played = games_played + 1;
   }
@@ -119,3 +122,5 @@ $(function () {
     parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
   }
 });
+
+// Line 31 , 75 and 82 changed for disabling the cards when modal appears.
